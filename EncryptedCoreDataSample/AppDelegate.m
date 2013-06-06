@@ -2,13 +2,41 @@
 //  AppDelegate.m
 //  EncryptedCoreDataSample
 //
-//  Created by Ronan on 30/05/2013.
-//  Copyright (c) 2013 Mobile Genius LLC. All rights reserved.
+//  Created by Ronan O Ciosoig on 30/05/2013.
+//  Copyright (c) 2013 Mobile Genius LLC.
 //
+//
+// This code is distributed under the terms and conditions of the MIT license.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
 
 #import "AppDelegate.h"
+#import "Product.h"
+#import "ProductViewController.h"
 
-#import "MasterViewController.h"
+@interface AppDelegate()
+
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
+
+@end
 
 @implementation AppDelegate
 
@@ -19,36 +47,43 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-
-    MasterViewController *masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
-    masterViewController.managedObjectContext = self.managedObjectContext;
+    [self populateDatabase];
+    
+    ProductViewController *productViewController = [[ProductViewController alloc] init];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:productViewController];
+    productViewController.managedObjectContext = self.managedObjectContext;
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
+- (void) populateDatabase
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL populateWithData = [defaults boolForKey:@"populateWithData"];
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    // will only run this once.
+    if (!populateWithData) {
+        NSString *pathToDict = [[NSBundle mainBundle] pathForResource:@"SampleData" ofType:@"plist"];
+        NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:pathToDict];
+        NSArray *products = [dictionary objectForKey:@"Products"];
+        
+        // create an entity for each product and store in Core Data.
+        for (NSDictionary *productDictionary in products) {
+            // create an entity
+            Product *newProduct = (Product*) [NSEntityDescription insertNewObjectForEntityForName:@"Product" inManagedObjectContext:self.managedObjectContext];
+            newProduct.name = [productDictionary objectForKey:@"ProductName"];
+            newProduct.price = [productDictionary objectForKey:@"Price"];
+            newProduct.cost = (NSNumber*)[productDictionary objectForKey:@"Cost"];
+        }
+        
+        [self saveContext];
+        
+        populateWithData = YES;
+        [defaults setBool:populateWithData forKey:@"populateWithData"];
+        [defaults synchronize];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -57,21 +92,19 @@
     [self saveContext];
 }
 
+#pragma mark - Core Data stack
+
 - (void)saveContext
 {
     NSError *error = nil;
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-             // Replace this implementation with code to handle the error appropriately.
-             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         } 
     }
 }
-
-#pragma mark - Core Data stack
 
 // Returns the managed object context for the application.
 // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
@@ -114,29 +147,6 @@
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-         
-         Typical reasons for an error here include:
-         * The persistent store is not accessible;
-         * The schema for the persistent store is incompatible with current managed object model.
-         Check the error message to determine what the actual problem was.
-         
-         
-         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
-         
-         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
-         * Simply deleting the existing store:
-         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
-         
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
-         @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
-         
-         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
-         
-         */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }    
