@@ -12,12 +12,9 @@
 
 #import "EncryptedStringTransformer.h"
 #import "NSData+Encryption.h"
-#import "AppUser.h"
+#import "KeyGenerator.h"
 
 @interface EncryptedStringTransformer()
-{
-    AppUser *appUser;
-}
 
 @end
 
@@ -39,7 +36,7 @@
         return nil;
     
     NSData *clearData = [value dataUsingEncoding:NSUTF8StringEncoding];
-    return [clearData encryptWithKey:[[AppUser sharedAppUser] access]];
+    return [clearData encryptWithKey:[KeyGenerator key]];
 }
 
 - (id)reverseTransformedValue:(id)value 
@@ -47,7 +44,7 @@
     if (value == nil)
         return nil;
     
-    NSData *data = [value decryptWithKey:[[AppUser sharedAppUser] access]];
+    NSData *data = [value decryptWithKey:[KeyGenerator key]];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
