@@ -1,10 +1,9 @@
 EncryptedCoreDataSample
 =============
--------------
+
 
 EncryptedCoreDataSample is an example project to support an article published in the Software Developer's Journal - June issue 2013 on iOS. 
 
-------------
 Requirements
 ============
 
@@ -13,7 +12,6 @@ The code provided is intended to work with ARC enabled.
 * CoreData.framework
 * Security.framework
 
--------
 License
 =======
 
