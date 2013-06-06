@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0C95DA175D586A0084DFED /* KeyGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0C95D9175D586A0084DFED /* KeyGenerator.m */; };
+		AF0C95E5175D62340084DFED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0C95DD175D59010084DFED /* Security.framework */; };
+		AF0C95F0175D64610084DFED /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0C95EF175D64610084DFED /* KeychainWrapper.m */; };
 		AF28CFEF1757514800F85636 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF28CFEE1757514800F85636 /* UIKit.framework */; };
 		AF28CFF11757514900F85636 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF28CFF01757514900F85636 /* Foundation.framework */; };
 		AF28CFF31757514900F85636 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF28CFF21757514900F85636 /* CoreGraphics.framework */; };
@@ -18,13 +21,22 @@
 		AF28D0051757514900F85636 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF28D0041757514900F85636 /* Default@2x.png */; };
 		AF28D0071757514900F85636 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF28D0061757514900F85636 /* Default-568h@2x.png */; };
 		AF28D00A1757514900F85636 /* EncryptedCoreDataSample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF28D0081757514900F85636 /* EncryptedCoreDataSample.xcdatamodeld */; };
-		AF28D00D1757514900F85636 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF28D00C1757514900F85636 /* MasterViewController.m */; };
-		AF28D0101757514900F85636 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF28D00F1757514900F85636 /* DetailViewController.m */; };
-		AF28D0131757514900F85636 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF28D0111757514900F85636 /* MasterViewController.xib */; };
-		AF28D0161757514900F85636 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF28D0141757514900F85636 /* DetailViewController.xib */; };
+		AF28D00D1757514900F85636 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF28D00C1757514900F85636 /* ProductViewController.m */; };
+		AF28D023175754EA00F85636 /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = AF28D020175754EA00F85636 /* NSData+Encryption.m */; };
+		AF28D024175754EA00F85636 /* EncryptedStringTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AF28D022175754EA00F85636 /* EncryptedStringTransformer.m */; };
+		AF6DCCE8175B741B0079D635 /* SampleData.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF6DCCE7175B741B0079D635 /* SampleData.plist */; };
+		AF6DCD44175C966A0079D635 /* EncryptedNumberTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6DCD43175C966A0079D635 /* EncryptedNumberTransformer.m */; };
+		AF8C9B73175FB86600EC1147 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8C9B72175FB86600EC1147 /* Product.m */; };
+		AF8C9B781760DEFF00EC1147 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8C9B751760DEFF00EC1147 /* SSKeychain.m */; };
+		AF8C9B791760DEFF00EC1147 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8C9B771760DEFF00EC1147 /* SSKeychainQuery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF0C95D8175D586A0084DFED /* KeyGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyGenerator.h; sourceTree = "<group>"; };
+		AF0C95D9175D586A0084DFED /* KeyGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyGenerator.m; sourceTree = "<group>"; };
+		AF0C95DD175D59010084DFED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AF0C95EE175D64610084DFED /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		AF0C95EF175D64610084DFED /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		AF28CFEB1757514800F85636 /* EncryptedCoreDataSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EncryptedCoreDataSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF28CFEE1757514800F85636 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AF28CFF01757514900F85636 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -40,12 +52,22 @@
 		AF28D0041757514900F85636 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AF28D0061757514900F85636 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AF28D0091757514900F85636 /* EncryptedCoreDataSample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EncryptedCoreDataSample.xcdatamodel; sourceTree = "<group>"; };
-		AF28D00B1757514900F85636 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		AF28D00C1757514900F85636 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		AF28D00E1757514900F85636 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		AF28D00F1757514900F85636 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		AF28D0121757514900F85636 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
-		AF28D0151757514900F85636 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		AF28D00B1757514900F85636 /* ProductViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
+		AF28D00C1757514900F85636 /* ProductViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
+		AF28D01F175754EA00F85636 /* NSData+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Encryption.h"; sourceTree = "<group>"; };
+		AF28D020175754EA00F85636 /* NSData+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption.m"; sourceTree = "<group>"; };
+		AF28D021175754EA00F85636 /* EncryptedStringTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptedStringTransformer.h; sourceTree = "<group>"; };
+		AF28D022175754EA00F85636 /* EncryptedStringTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptedStringTransformer.m; sourceTree = "<group>"; };
+		AF6DCCE7175B741B0079D635 /* SampleData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SampleData.plist; sourceTree = "<group>"; };
+		AF6DCD42175C96690079D635 /* EncryptedNumberTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptedNumberTransformer.h; sourceTree = "<group>"; };
+		AF6DCD43175C966A0079D635 /* EncryptedNumberTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptedNumberTransformer.m; sourceTree = "<group>"; };
+		AF8C9B71175FB86600EC1147 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		AF8C9B72175FB86600EC1147 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		AF8C9B741760DEFF00EC1147 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSKeychain.h; path = ExternalFrameworks/SSKeychain/SSKeychain.h; sourceTree = "<group>"; };
+		AF8C9B751760DEFF00EC1147 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSKeychain.m; path = ExternalFrameworks/SSKeychain/SSKeychain.m; sourceTree = "<group>"; };
+		AF8C9B761760DEFF00EC1147 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSKeychainQuery.h; path = ExternalFrameworks/SSKeychain/SSKeychainQuery.h; sourceTree = "<group>"; };
+		AF8C9B771760DEFF00EC1147 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSKeychainQuery.m; path = ExternalFrameworks/SSKeychain/SSKeychainQuery.m; sourceTree = "<group>"; };
+		AFF4C5A0175DF44C00F3EE48 /* EncryptedCoreDataSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = EncryptedCoreDataSample.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF0C95E5175D62340084DFED /* Security.framework in Frameworks */,
 				AF28CFEF1757514800F85636 /* UIKit.framework in Frameworks */,
 				AF28CFF11757514900F85636 /* Foundation.framework in Frameworks */,
 				AF28CFF31757514900F85636 /* CoreGraphics.framework in Frameworks */,
@@ -63,11 +86,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF0C95E6175D63C10084DFED /* ExternalFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF0C95E7175D63CF0084DFED /* SSKeychain */,
+			);
+			name = ExternalFrameworks;
+			sourceTree = "<group>";
+		};
+		AF0C95E7175D63CF0084DFED /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				AF8C9B741760DEFF00EC1147 /* SSKeychain.h */,
+				AF8C9B751760DEFF00EC1147 /* SSKeychain.m */,
+				AF8C9B761760DEFF00EC1147 /* SSKeychainQuery.h */,
+				AF8C9B771760DEFF00EC1147 /* SSKeychainQuery.m */,
+			);
+			name = SSKeychain;
+			sourceTree = "<group>";
+		};
 		AF28CFE21757514800F85636 = {
 			isa = PBXGroup;
 			children = (
+				AF0C95DD175D59010084DFED /* Security.framework */,
 				AF28CFF61757514900F85636 /* EncryptedCoreDataSample */,
 				AF28CFED1757514800F85636 /* Frameworks */,
+				AF0C95E6175D63C10084DFED /* ExternalFrameworks */,
 				AF28CFEC1757514800F85636 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,15 +138,10 @@
 		AF28CFF61757514900F85636 /* EncryptedCoreDataSample */ = {
 			isa = PBXGroup;
 			children = (
-				AF28CFFF1757514900F85636 /* AppDelegate.h */,
-				AF28D0001757514900F85636 /* AppDelegate.m */,
-				AF28D00B1757514900F85636 /* MasterViewController.h */,
-				AF28D00C1757514900F85636 /* MasterViewController.m */,
-				AF28D00E1757514900F85636 /* DetailViewController.h */,
-				AF28D00F1757514900F85636 /* DetailViewController.m */,
-				AF28D0111757514900F85636 /* MasterViewController.xib */,
-				AF28D0141757514900F85636 /* DetailViewController.xib */,
-				AF28D0081757514900F85636 /* EncryptedCoreDataSample.xcdatamodeld */,
+				AFF4C59F175DE2EB00F3EE48 /* KeyGen */,
+				AF28D01E175754AF00F85636 /* Encryption */,
+				AF28D01D175754A200F85636 /* CoreData */,
+				AF28D01C1757548200F85636 /* SampleApplication */,
 				AF28CFF71757514900F85636 /* Supporting Files */,
 			);
 			path = EncryptedCoreDataSample;
@@ -111,6 +150,7 @@
 		AF28CFF71757514900F85636 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFF4C5A0175DF44C00F3EE48 /* EncryptedCoreDataSample.entitlements */,
 				AF28CFF81757514900F85636 /* EncryptedCoreDataSample-Info.plist */,
 				AF28CFF91757514900F85636 /* InfoPlist.strings */,
 				AF28CFFC1757514900F85636 /* main.m */,
@@ -118,8 +158,54 @@
 				AF28D0021757514900F85636 /* Default.png */,
 				AF28D0041757514900F85636 /* Default@2x.png */,
 				AF28D0061757514900F85636 /* Default-568h@2x.png */,
+				AF6DCCE7175B741B0079D635 /* SampleData.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF28D01C1757548200F85636 /* SampleApplication */ = {
+			isa = PBXGroup;
+			children = (
+				AF28CFFF1757514900F85636 /* AppDelegate.h */,
+				AF28D0001757514900F85636 /* AppDelegate.m */,
+				AF28D00B1757514900F85636 /* ProductViewController.h */,
+				AF28D00C1757514900F85636 /* ProductViewController.m */,
+			);
+			name = SampleApplication;
+			sourceTree = "<group>";
+		};
+		AF28D01D175754A200F85636 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AF28D0081757514900F85636 /* EncryptedCoreDataSample.xcdatamodeld */,
+				AF8C9B71175FB86600EC1147 /* Product.h */,
+				AF8C9B72175FB86600EC1147 /* Product.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		AF28D01E175754AF00F85636 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				AF28D01F175754EA00F85636 /* NSData+Encryption.h */,
+				AF28D020175754EA00F85636 /* NSData+Encryption.m */,
+				AF28D021175754EA00F85636 /* EncryptedStringTransformer.h */,
+				AF28D022175754EA00F85636 /* EncryptedStringTransformer.m */,
+				AF6DCD42175C96690079D635 /* EncryptedNumberTransformer.h */,
+				AF6DCD43175C966A0079D635 /* EncryptedNumberTransformer.m */,
+			);
+			name = Encryption;
+			sourceTree = "<group>";
+		};
+		AFF4C59F175DE2EB00F3EE48 /* KeyGen */ = {
+			isa = PBXGroup;
+			children = (
+				AF0C95D8175D586A0084DFED /* KeyGenerator.h */,
+				AF0C95D9175D586A0084DFED /* KeyGenerator.m */,
+				AF0C95EE175D64610084DFED /* KeychainWrapper.h */,
+				AF0C95EF175D64610084DFED /* KeychainWrapper.m */,
+			);
+			name = KeyGen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,8 +263,7 @@
 				AF28D0031757514900F85636 /* Default.png in Resources */,
 				AF28D0051757514900F85636 /* Default@2x.png in Resources */,
 				AF28D0071757514900F85636 /* Default-568h@2x.png in Resources */,
-				AF28D0131757514900F85636 /* MasterViewController.xib in Resources */,
-				AF28D0161757514900F85636 /* DetailViewController.xib in Resources */,
+				AF6DCCE8175B741B0079D635 /* SampleData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,8 +277,15 @@
 				AF28CFFD1757514900F85636 /* main.m in Sources */,
 				AF28D0011757514900F85636 /* AppDelegate.m in Sources */,
 				AF28D00A1757514900F85636 /* EncryptedCoreDataSample.xcdatamodeld in Sources */,
-				AF28D00D1757514900F85636 /* MasterViewController.m in Sources */,
-				AF28D0101757514900F85636 /* DetailViewController.m in Sources */,
+				AF28D00D1757514900F85636 /* ProductViewController.m in Sources */,
+				AF28D023175754EA00F85636 /* NSData+Encryption.m in Sources */,
+				AF28D024175754EA00F85636 /* EncryptedStringTransformer.m in Sources */,
+				AF6DCD44175C966A0079D635 /* EncryptedNumberTransformer.m in Sources */,
+				AF0C95DA175D586A0084DFED /* KeyGenerator.m in Sources */,
+				AF0C95F0175D64610084DFED /* KeychainWrapper.m in Sources */,
+				AF8C9B73175FB86600EC1147 /* Product.m in Sources */,
+				AF8C9B781760DEFF00EC1147 /* SSKeychain.m in Sources */,
+				AF8C9B791760DEFF00EC1147 /* SSKeychainQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,22 +298,6 @@
 				AF28CFFA1757514900F85636 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		AF28D0111757514900F85636 /* MasterViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF28D0121757514900F85636 /* en */,
-			);
-			name = MasterViewController.xib;
-			sourceTree = "<group>";
-		};
-		AF28D0141757514900F85636 /* DetailViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF28D0151757514900F85636 /* en */,
-			);
-			name = DetailViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -286,10 +362,17 @@
 		AF28D01A1757514900F85636 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EncryptedCoreDataSample/EncryptedCoreDataSample.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EncryptedCoreDataSample/EncryptedCoreDataSample-Prefix.pch";
 				INFOPLIST_FILE = "EncryptedCoreDataSample/EncryptedCoreDataSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -297,10 +380,17 @@
 		AF28D01B1757514900F85636 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EncryptedCoreDataSample/EncryptedCoreDataSample.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EncryptedCoreDataSample/EncryptedCoreDataSample-Prefix.pch";
 				INFOPLIST_FILE = "EncryptedCoreDataSample/EncryptedCoreDataSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -324,6 +414,7 @@
 				AF28D01B1757514900F85636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
