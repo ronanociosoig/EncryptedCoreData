@@ -1,5 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>Products</key>
+	<array>
+		<dict>
+			<key>ProductName</key>
+			<string>Natural Apple Juice</string>
+			<key>Cost</key>
+			<real>0.9</real>
+			<key>Price</key>
+			<real>1.65</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Apple Juice Drink</string>
+			<key>Cost</key>
+			<real>0.45</real>
+			<key>Price</key>
+			<real>1.23</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Orange Juice</string>
+			<key>Cost</key>
+			<real>0.35</real>
+			<key>Price</key>
+			<real>2.33</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Grape Juice</string>
+			<key>Cost</key>
+			<real>0.78</real>
+			<key>Price</key>
+			<real>1.74</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Peach Juice</string>
+			<key>Cost</key>
+			<real>2.13</real>
+			<key>Price</key>
+			<real>3.68</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Lemon and Lime</string>
+			<key>Cost</key>
+			<real>1.47</real>
+			<key>Price</key>
+			<real>3.68</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Raspberry Juice</string>
+			<key>Cost</key>
+			<real>1.15</real>
+			<key>Price</key>
+			<real>2.6</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Cranberry Juice</string>
+			<key>Cost</key>
+			<real>0.96</real>
+			<key>Price</key>
+			<real>2.6</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Fresh Orange Juice</string>
+			<key>Cost</key>
+			<real>0.36</real>
+			<key>Price</key>
+			<real>4.59</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Pear Juice Drink</string>
+			<key>Cost</key>
+			<real>0.14</real>
+			<key>Price</key>
+			<real>0.89</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Peach Nectar</string>
+			<key>Cost</key>
+			<real>0.96</real>
+			<key>Price</key>
+			<real>2.78</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Pinapple Juice Drink</string>
+			<key>Cost</key>
+			<real>2.45</real>
+			<key>Price</key>
+			<real>5.5</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Orange Juice Drink</string>
+			<key>Cost</key>
+			<real>0.25</real>
+			<key>Price</key>
+			<real>1.78</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Exotic Fruit drink</string>
+			<key>Cost</key>
+			<real>1.85</real>
+			<key>Price</key>
+			<real>3.55</real>
+		</dict>
+		<dict>
+			<key>ProductName</key>
+			<string>Lychee Drink</string>
+			<key>Cost</key>
+			<real>1.23</real>
+			<key>Price</key>
+			<real>2.15</real>
+		</dict>
+	</array>
+</dict>
 </plist>
